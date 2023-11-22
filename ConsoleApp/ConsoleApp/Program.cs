@@ -37,12 +37,12 @@ PrintResult("task8",helper.AverageTravelTimePerDirection(deliveries).SequenceEqu
 var task9_1 = JsonSerializer.Deserialize<List<Delivery>>(FileText("task9_1")) ?? throw new ArgumentException();
 PrintResult("task9_1",helper.Paging(
     deliveries, 
-    x => x.CargoType, 
+    x => x.CargoType,
     x => x.Status is DeliveryStatus.InProgress).SequenceEqual(task9_1));
 
 var task9_2 = JsonSerializer.Deserialize<List<Delivery>>(FileText("task9_2")) ?? throw new ArgumentException();
 PrintResult("task9_2",helper.Paging(
-    deliveries, 
+    deliveries,
     x => x.ArrivalPeriod.Start, 
     x => x.Direction.Origin.City == "Lviv").SequenceEqual(task9_2));
 
